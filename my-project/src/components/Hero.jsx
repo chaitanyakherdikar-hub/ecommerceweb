@@ -1,15 +1,19 @@
 import React from "react";
 
-function Hero() {
+const Hero = () => {
   return (
-    <section className="relative w-full h-[500px]">
-      <img src="/ecommerceweb/Hero.jpg" alt="Hero" className="w-full h-full object-cover opacity-80" />
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center bg-black/40">
-        <h1 className="text-5xl font-bold mb-4">Capture the Streets</h1>
-        <p className="text-lg max-w-xl">Explore unique street photography and bring the charm of the streets to your walls.</p>
+    <div
+      className="h-screen flex items-center justify-center bg-cover bg-center text-white relative"
+      style={{ backgroundImage: "url('/ecommerceweb/Hero.jpg')" }}
+    >
+      <div className="bg-black bg-opacity-70 p-8 rounded-xl text-center">
+        <h1 className="text-5xl font-bold mb-4 text-purple-400">StreetoGraphs</h1>
+        <p className="text-lg text-gray-300">
+          Capturing the raw beauty of the streets — one shot at a time.
+        </p>
       </div>
-    </section>
+    </div>
   );
-}
+};
 
 export default Hero;

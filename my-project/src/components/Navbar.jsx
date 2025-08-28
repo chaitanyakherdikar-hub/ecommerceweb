@@ -1,22 +1,39 @@
-
 import React from "react";
-import { Link } from "react-router-dom";
 
-function Navbar() {
+const Navbar = () => {
+  const links = [
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "shop", label: "Shop" },
+    { id: "contact", label: "Contact" },
+    { id: "cart", label: "Cart" },
+  ];
+
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <nav className="bg-gray-800 shadow-md p-4 flex justify-between items-center">
-      <div className="text-2xl font-extrabold text-white font-[Open_Sans]">
-        StreetoGraphs
-      </div>
-      <div className="flex gap-6">
-        <Link to="/" className="hover:text-blue-400 transition">Home</Link>
-        <Link to="/about" className="hover:text-blue-400 transition">About</Link>
-        <Link to="/shop" className="hover:text-blue-400 transition">Shop</Link>
-        <Link to="/cart" className="hover:text-blue-400 transition">Cart</Link>
-        <Link to="/Contact" className="hover:text-blue-400 transition">Contact</Link>
+    <nav className="sticky top-0 z-50 bg-black text-white shadow-md border-b border-gray-800">
+      <div className="container mx-auto flex justify-between items-center py-4 px-6">
+        <h1 className="text-2xl font-bold text-purple-500 tracking-wide cursor-pointer"
+            onClick={() => scrollToSection("hero")}>
+          StreetoGraphs
+        </h1>
+        <ul className="flex space-x-6">
+          {links.map((link) => (
+            <li
+              key={link.id}
+              className="cursor-pointer text-gray-300 hover:text-purple-400 transition-colors"
+              onClick={() => scrollToSection(link.id)}
+            >
+              {link.label}
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

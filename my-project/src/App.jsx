@@ -1,30 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Shop from "./pages/Shop";
-import Cart from "./pages/Cart";
-import Contact from "./pages/Contact";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Shop from "./components/Shop";
+import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/shop" element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <div className="flex flex-col min-h-screen bg-black text-white">
+      <Navbar />
+
+      <main className="flex-grow">
+        <section id="hero"><Hero /></section>
+        <section id="about" className="py-12"><About /></section>
+        <section id="shop" className="py-12"><Shop /></section>
+        <section id="contact" className="py-12"><Contact /></section>
+        <section id="cart" className="py-12"><Cart /></section>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
 
