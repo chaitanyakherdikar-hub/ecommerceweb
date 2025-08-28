@@ -9,7 +9,7 @@ function PhotoCard({ photo }) {
       <img
         src={photo.img}
         alt={photo.title}
-        className="w-full h-40 object-cover mb-2 rounded"
+        className="w-full object-cover mb-2 rounded aspect-3/4"
       />
       <h3 className="text-lg font-semibold">{photo.title}</h3>
       <p className="text-gray-600">₹{photo.price}</p>
