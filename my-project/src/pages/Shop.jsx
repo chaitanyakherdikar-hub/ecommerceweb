@@ -4,7 +4,7 @@ import PhotoCard from "../components/PhotoCard";
 const photos = Array.from({ length: 20 }, (_, i) => ({
   id: i + 1,
   title: `Street Photo ${i + 1}`,
-  img: `/src/pun${i + 1}.jpg`,
+  img: `/photo${i + 1}.jpg`,
   price: Math.floor(Math.random() * (500 - 250) + 250),
 }));
 
