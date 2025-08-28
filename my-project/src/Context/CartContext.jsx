@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, { ...item, qty: 1 }]);
     }
-    console.log("item added to cart")
+    console.log("item added to cart");
   };
 
   const removeFromCart = (id) => {
